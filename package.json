@@ -1,26 +1,17 @@
 {
   "name": "swing-notes-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "serverless deploy",
+    "remove": "serverless remove",
+    "offline": "serverless offline"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LindbergSala/swing-notes-api.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/LindbergSala/swing-notes-api/issues"
-  },
-  "homepage": "https://github.com/LindbergSala/swing-notes-api#readme",
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.886.0",
-    "@aws-sdk/lib-dynamodb": "^3.886.0",
-    "uuid": "^13.0.0"
-  }
+    "@aws-sdk/client-dynamodb": "^3.637.0",
+    "@aws-sdk/lib-dynamodb": "^3.637.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {}
 }
+
