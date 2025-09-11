@@ -1,0 +1,80 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-09-11T18:55:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2025.0.0",
+  "resources": [
+    {
+      "_id": "wrk_swing_notes_api",
+      "parentId": null,
+      "modified": 0,
+      "created": 0,
+      "name": "Swing Notes API",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_get_notes",
+      "parentId": "wrk_swing_notes_api",
+      "modified": 0,
+      "created": 0,
+      "url": "https://7lv8qqrvxb.execute-api.eu-north-1.amazonaws.com/dev/api/notes/testuser",
+      "name": "GET Notes (testuser)",
+      "method": "GET",
+      "headers": [
+        { "name": "x-api-key", "value": "KKKMGKuxXa8WkehWkQMjl14zFSdcTvsu9Gtap11F" }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_post_note",
+      "parentId": "wrk_swing_notes_api",
+      "modified": 0,
+      "created": 0,
+      "url": "https://7lv8qqrvxb.execute-api.eu-north-1.amazonaws.com/dev/api/notes/testuser",
+      "name": "POST Note (testuser)",
+      "method": "POST",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "x-api-key", "value": "KKKMGKuxXa8WkehWkQMjl14zFSdcTvsu9Gtap11F" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"Min nya anteckning\",\n  \"text\": \"Det här är innehållet i anteckningen\"\n}"
+      },
+      "_type": "request"
+    },
+    {
+      "_id": "req_put_note",
+      "parentId": "wrk_swing_notes_api",
+      "modified": 0,
+      "created": 0,
+      "url": "https://7lv8qqrvxb.execute-api.eu-north-1.amazonaws.com/dev/api/notes/<id>",
+      "name": "PUT Note (update by id)",
+      "method": "PUT",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "x-api-key", "value": "KKKMGKuxXa8WkehWkQMjl14zFSdcTvsu9Gtap11F" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"Uppdaterad titel\",\n  \"text\": \"Uppdaterad anteckningstext\"\n}"
+      },
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_note",
+      "parentId": "wrk_swing_notes_api",
+      "modified": 0,
+      "created": 0,
+      "url": "https://7lv8qqrvxb.execute-api.eu-north-1.amazonaws.com/dev/api/notes/<id>",
+      "name": "DELETE Note (by id)",
+      "method": "DELETE",
+      "headers": [
+        { "name": "x-api-key", "value": "KKKMGKuxXa8WkehWkQMjl14zFSdcTvsu9Gtap11F" }
+      ],
+      "_type": "request"
+    }
+  ]
+}
