@@ -19,9 +19,10 @@ provider:
           Action:
             - dynamodb:PutItem
             - dynamodb:GetItem
-            - dynamodb:Query
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
+            - dynamodb:Query
+            - dynamodb:Scan
           Resource:
             - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.NOTES_TABLE}
             - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:provider.environment.NOTES_TABLE}/index/${self:provider.environment.GSI_BY_ID}
@@ -40,7 +41,7 @@ functions:
           path: api/notes/{username}
           method: get
           cors: true
-          private: true   # API-nyckel krävs
+          private: true
 
   createNote:
     handler: src/handlers/create-note.handler
@@ -49,6 +50,7 @@ functions:
           path: api/notes/{username}
           method: post
           cors: true
+          private: true
 
   updateNote:
     handler: src/handlers/update-note.handler
@@ -57,6 +59,7 @@ functions:
           path: api/notes/{id}
           method: put
           cors: true
+          private: true
 
   deleteNote:
     handler: src/handlers/delete-note.handler
@@ -65,12 +68,13 @@ functions:
           path: api/notes/{id}
           method: delete
           cors: true
+          private: true
 
   createAccount:
     handler: src/createAccount/index.handler
     events:
       - http:
-          path: /signup
+          path: signup
           method: post
           cors: true
 

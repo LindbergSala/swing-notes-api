@@ -1,16 +1,16 @@
 export const createAccountSchema = {
-    type: 'object',
-    require: ["body"],
-    properties: {
-        body: {
-            type: 'object',
-            required: ['username', 'email', 'password'],
-            properties: {
-                username: { type: 'string', minLength: 3 },
-                email: { type: 'string', format: 'email' },
-                password: { type: 'string', minLength: 8 }
-            },
-        },     
-    },
+  type: 'object',
+  required: ['body'],
+  properties: {
+    body: {
+      type: 'object',
+      required: ['username', 'email', 'password'],
+      additionalProperties: false,
+      properties: {
+        username: { type: 'string', minLength: 3 },
+        email: { type: 'string', format: 'email' },
+        password: { type: 'string', minLength: 8 }
+      }
+    }
+  }
 };
-
