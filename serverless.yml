@@ -8,17 +8,6 @@ provider:
   memorySize: 256
   timeout: 10
 
-  apiGateway:
-    apiKeys:
-      - swing-notes-api-key
-    usagePlan:
-      quota:
-        limit: 5000
-        period: MONTH
-      throttle:
-        rateLimit: 50
-        burstLimit: 10
-
   environment:
     NOTES_TABLE: ${self:service}-notes-${sls:stage}
     GSI_BY_ID: GSI1ById
@@ -50,6 +39,7 @@ functions:
       - http:
           path: api/notes/{username}
           method: get
+          cors: true
           private: true   # API-nyckel krävs
 
   createNote:
@@ -58,7 +48,7 @@ functions:
       - http:
           path: api/notes/{username}
           method: post
-          private: true
+          cors: true
 
   updateNote:
     handler: src/handlers/update-note.handler
@@ -66,7 +56,7 @@ functions:
       - http:
           path: api/notes/{id}
           method: put
-          private: true
+          cors: true
 
   deleteNote:
     handler: src/handlers/delete-note.handler
@@ -74,7 +64,7 @@ functions:
       - http:
           path: api/notes/{id}
           method: delete
-          private: true
+          cors: true
 
   createAccount:
     handler: src/createAccount/index.handler
@@ -82,7 +72,7 @@ functions:
       - http:
           path: /signup
           method: post
-          private: true
+          cors: true
 
 resources:
   Resources:
