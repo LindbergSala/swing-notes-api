@@ -76,6 +76,14 @@ functions:
           method: delete
           private: true
 
+  createAccount:
+    handler: src/createAccount/index.handler
+    events:
+      - http:
+          path: /signup
+          method: post
+          private: true
+
 resources:
   Resources:
     NotesTable:
