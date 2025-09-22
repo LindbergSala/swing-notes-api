@@ -8,6 +8,20 @@ provider:
   memorySize: 256
   timeout: 10
 
+  apiGateway:
+    apiKeys:
+      - name: swing-notes-api-key
+        value: KKKMGKuxXa8WkehWkQMjl14zFSdcTvsu9Gtap11F   # valfritt att sätta egen, annars auto
+        description: "API key for notes endpoints"
+        enabled: true
+    usagePlan:
+      throttle:
+        burstLimit: 20
+        rateLimit: 10
+      quota:
+        limit: 10000
+        period: MONTH
+
   environment:
     NOTES_TABLE: ${self:service}-notes-${sls:stage}
     GSI_BY_ID: GSI1ById
